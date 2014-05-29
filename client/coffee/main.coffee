@@ -1,12 +1,11 @@
 VENDOR = "vendor"
 requirejs.config
   paths:
-    'jquery': "#{VENDOR}/jquery.min"
-    'underscore': "#{VENDOR}/underscore.min"
-    'jade': "#{VENDOR}/jade.min"
-    'd3': "#{VENDOR}/d3.min"
+    'jquery': "#{VENDOR}/jquery/dist/jquery.min"
+    'underscore': "#{VENDOR}/underscore/underscore"
+    'd3': "#{VENDOR}/d3/d3.min"
     'io': "#{VENDOR}/socket.min"
-    'three': "#{VENDOR}/three.min"
+    'three': "#{VENDOR}/threejs/build/three.min"
   shim:
     'jquery': exports: '$'
     'underscore': exports: '_'

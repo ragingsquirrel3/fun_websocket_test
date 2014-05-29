@@ -1,0 +1,26 @@
+{
+  "name": "socket_test",
+  "version": "0.0.1",
+  "moduleType": [
+    "amd",
+    "es6"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "~2.1.11",
+    "jquery": "~2.1.0",
+    "d3": "~3.4.4",
+    "topojson": "~1.6.1",
+    "threejs": "*",
+    "underscore": "*"
+  }
+}
