@@ -4,7 +4,7 @@ requirejs.config
     'jquery': "#{VENDOR}/jquery/dist/jquery.min"
     'underscore': "#{VENDOR}/underscore/underscore"
     'd3': "#{VENDOR}/d3/d3.min"
-    'io': "#{VENDOR}/socket.min"
+    'io': "/socket.io/socket.io"
     'three': "#{VENDOR}/threejs/build/three.min"
   shim:
     'jquery': exports: '$'
