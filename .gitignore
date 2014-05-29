@@ -1,5 +1,5 @@
 node_modules
 npm-debug.log
 server/client_build
-client/coffee/public/js/vendor
+client/public/js/vendor
 tmp
