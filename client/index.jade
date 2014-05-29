@@ -1,0 +1,14 @@
+!!!
+html
+  head
+    //- link(href="./stylesheets/main.css", rel='stylesheet', type='text/css')
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+
+  body
+    h1 Hola Mundo
+    
+    //- js: Single file in production, otherwise load requirejs
+    if process.env.ENV == 'production'
+      script(src='./js/main.js')
+    else
+      script(data-main='./js/main.js', src='./js/vendor/require.js')
