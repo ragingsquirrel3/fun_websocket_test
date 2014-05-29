@@ -5,7 +5,6 @@ util = require 'util'
 module.exports = (grunt) ->
   
   # register external tasks
-  grunt.loadNpmTasks 'grunt-express'
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-jade'
@@ -123,21 +122,6 @@ module.exports = (grunt) ->
         options:
           reporter: 'spec'
         src: ['test/controllers/*']
-        
-    # express server
-    express:
-      test:
-        options:
-          server: './app'
-          port: 5000
-      development:
-        options:
-          server: './app'
-          port: 5000
-      production:
-        options:
-          server: './app'
-          port: 3000    
     
     sass:
       development:
@@ -159,7 +143,12 @@ module.exports = (grunt) ->
         tasks: 'clientTemplates'
       sass:
         files: ["#{APP_PATH}/scss/**/*.scss"]
-        tasks: 'sass:development' 
+        tasks: 'sass:development'
+
+  grunt.registerTask 'start', 'starts node', ->
+    grunt.util.spawn
+      cmd: 'coffee',
+      args: ['app.coffee', '-n']
         
   grunt.registerTask 'test', [
     'development'
@@ -197,6 +186,6 @@ module.exports = (grunt) ->
   grunt.registerTask 'default', [
     # 'env:development'
     'development'
-    'express:development'
+    'start'
     'watch'
   ]

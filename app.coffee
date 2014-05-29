@@ -15,4 +15,4 @@ io.on 'connection', (socket) ->
   socket.emit 'news', { hello: 'world' }
   socket.on 'other event', (data) -> console.log data
 
-module.exports = app
+server.listen PORT

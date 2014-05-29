@@ -13,7 +13,14 @@ requirejs.config
     'jade': exports: 'jade'
     'd3': exports: 'd3'
 
-requirejs ['jquery', 'underscore', 'three'], ($, _) ->
+requirejs ['jquery', 'underscore', 'io', 'three'], ($, _, socket) ->
+  #socket stuff
+  socket = io.connect 'http://localhost:5000'
+  socket.on 'news', (data) ->
+    console.log data
+    socket.emit 'my other event', { my: 'data' }
+
+  # 3D
   scene = new THREE.Scene()
   camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000)
 
